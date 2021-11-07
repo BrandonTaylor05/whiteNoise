@@ -12,11 +12,11 @@ def index():
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
     file = request.files["fileName"]
-    fileName=file.filename
-    file.save(os.path.join(os.getcwd(),"uploads", fileName))
+    fileName = file.filename
+    file.save(os.path.join(os.getcwd(), "uploads", fileName))
 
     #Load an audio file
-    myAudioFile = "uploads/"+fileName
+    myAudioFile = "uploads/" + fileName
     sound1 = AudioSegment.from_file(myAudioFile, format="wav")
 
     #Invert phase of audio file
@@ -31,8 +31,9 @@ def upload():
     combined = Pan1.overlay(Pan2)
 
     #Export merged audio file
-    combined.export("combinedAudio.wav", format="wav")
+    combined.export(os.getcwd()+"/static/combined.wav", format="wav")
 
+    return render_template('audio.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
