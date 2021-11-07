@@ -1,0 +1,40 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title> Audio Phase Inverter </title>
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <div class = "header">
+
+            <img src = "" id = "snowflake">
+            <h1 id = "Header"> Audio Phase Inverter </h1>
+
+        </div>
+
+
+        <div class = "description">
+            <div id = "form">
+                <form id = "form1" action="/upload" method="POST" target="blank" enctype="multipart/form-data">
+
+                    <br><br>
+
+                    <label> Upload Audio: </label><br>
+                    <input type = "file" name = "fileName" required>
+
+                    <br><br>
+
+                    <div id = "submit ">
+                        <input type = "submit" name = "submit" value = "submit">
+                        <input type = "reset" name = "reset" value = "reset">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+</DOCTYPE>
+
+
+
